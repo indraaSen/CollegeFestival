@@ -1,0 +1,13 @@
+// .div-bgImages{
+//     background-image: url(require("src/component/Images/bgImageEvent.jpg"));
+//     height:695px;
+//     background-repeat:'no-repeat'
+// }
+
+.main_div{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 21px;
+}

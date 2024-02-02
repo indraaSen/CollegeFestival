@@ -1,0 +1,70 @@
+.div-card_alignment1{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    position: relative;
+    margin-top: 50px ;
+}
+
+.container{
+    height: 0px;
+    border: 1px solid black;
+    width: 150px;
+    margin-top: 140px;
+}
+
+// .circle1{
+//     border: 1px solid black;
+//     height: 20px;
+//     width: 20px;
+//     margin-top: 129px;
+//     margin-left: -55px;
+//     margin-right: -55px;
+//     border-radius: 50%;
+//     background: red;
+// }
+// .circle2{
+//     border: 1px solid black;
+//     height: 20px;
+//     width: 20px;
+//     margin-top: 129px;
+//     margin-left: -55px;
+//     margin-right: -55px;
+//     border-radius: 50%;
+//     background: yellow;
+// }
+.div-verticalLine-outer{
+    height: 100px;
+    padding: 10px;
+}
+.div-verticalLine-inner{
+    border: 1px solid black;
+    height: 100px;
+    width: 0px;
+    margin-left: 89%;
+}
+
+.div-card_alignment2{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    position: relative;
+}
+
+.div-verticalLine-outer2{
+    height: 100px;
+    padding: 10px;
+}
+.div-verticalLine-inner2{
+    border: 1px solid black;
+    height: 100px;
+    width: 0px;
+    margin-left: 10%;
+}
+
+.div-card_alignment3{
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin-left: 3.5%;
+}

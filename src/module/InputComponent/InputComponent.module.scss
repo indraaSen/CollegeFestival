@@ -1,0 +1,16 @@
+
+input{
+    border-color: rgb(109 109 255);;
+}
+.inputDiv {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 75px;
+    justify-content: space-around;
+}
+
+
+.error-class {
+    border: 5px solid red;
+}
