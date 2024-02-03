@@ -17,6 +17,8 @@ import { userContext } from '../../component/feature/MainComponent/MainComponent
 
 function HeaderComponent({tabs} : {tabs:string[]}) {
 
+  const contextData = React.useContext(userContext);
+
   const {userLoginDetail, setUserLoginDetail} = React.useContext(userContext);
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -25,17 +27,11 @@ function HeaderComponent({tabs} : {tabs:string[]}) {
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
 
   return (
     <AppBar position="static">
@@ -129,7 +125,7 @@ function HeaderComponent({tabs} : {tabs:string[]}) {
 
           <Box sx={{ flexGrow: 0 }}>
             
-              <Button variant='contained' color='success' onClick={()=> setUserLoginDetail({})}>Logout</Button>
+              <Button variant='contained' color='success' onClick={()=> {setUserLoginDetail({}); contextData.setOpenAlert(true);}}>Logout</Button>
             
           </Box>
         </Toolbar>

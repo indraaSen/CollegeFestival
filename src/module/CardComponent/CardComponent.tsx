@@ -3,9 +3,15 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { Button, CardActions } from '@mui/material';
+import moment from 'moment';
+import { userContext } from '../../component/feature/MainComponent/MainComponent';
 
-const CardComponent = ({eventProgram, cardColor,cardImage}:{eventProgram:string, cardColor:string, cardImage:string}) => {
+const CardComponent = ({eventProgram, cardColor,cardImage,eventDate}:{eventProgram:string, cardColor:string, cardImage:string,eventDate:string}) => {
+  
+  const contextData = React.useContext(userContext);
 
+  
   return (
     <Card sx={{ maxWidth: 250 }}>
       <CardMedia
@@ -21,16 +27,15 @@ const CardComponent = ({eventProgram, cardColor,cardImage}:{eventProgram:string,
         </Typography>
         <Typography variant="body2" color="text.secondary">
           <b>
-          Event Date : {'02/02/2024'} <br />
+          Event Date : {eventDate} <br />
           Event Start : {'04:00 PM'} <br />
           Event End : {'09:00 PM'} <br />
-          Event status : {'Successfull'}
+          Event status : {new Date().toLocaleDateString('en-GB') > eventDate ? 'Success' : new Date().toLocaleDateString('en-GB') < eventDate ? 'Up Comming': new Date().toLocaleDateString('en-GB') === eventDate ? "Live": ''}
           </b>
         </Typography>
       </CardContent>
       {/* <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small" onClick={momentcomp}>Share</Button>
       </CardActions> */}
     </Card>
   );

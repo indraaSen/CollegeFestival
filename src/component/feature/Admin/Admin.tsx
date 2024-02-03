@@ -5,7 +5,7 @@ import styless from './Admin.module.scss';
 const Admin = () => {
     const tabs:string[] = ["Home", "Manage Events", "Notice"];
     return(
-        <div  className={styless['div-bgimage']}>
+        <div>
             <HeaderComponent tabs={tabs} />
             <EventManager />
         </div>

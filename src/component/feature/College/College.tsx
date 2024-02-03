@@ -1,5 +1,6 @@
 import HeaderComponent from "../../../module/HeaderComponent/HeaderComponent"
 import ListComponent from "../../../module/ListComponent/ListComponent";
+import EventManager from "../Student/EventManager/EventManager";
 
 const College = () =>{
 
@@ -8,7 +9,7 @@ const College = () =>{
     return(
         <div>
             <HeaderComponent tabs={tabs}/>
-            <ListComponent />
+            <EventManager />
         </div>
     )
 }
