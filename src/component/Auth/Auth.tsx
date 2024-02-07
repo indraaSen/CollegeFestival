@@ -5,8 +5,6 @@ import { userContext } from "../feature/MainComponent/MainComponent";
 
 const Auth = () => {
 
-    const contextData = useContext(userContext);
-
     const [isSignUp, setIsSignUp] = useState(false)
     return(
         <div>

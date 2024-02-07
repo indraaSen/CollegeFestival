@@ -1,54 +1,47 @@
 import CardComponent from "../../../../module/CardComponent/CardComponent"
-import styless from './EventManager.module.scss';
-import singing from '../../../Images/RanuMondal.jpeg';
-import dancing from '../../../Images/dancing.jpg';
-import standup from '../../../Images/standUp.png';
-import hiddentalent from '../../../Images/hiddenTalent.jpeg';
-import award from '../../../Images/award.jpeg';
-import fashionshow from '../../../Images/fashionShow.jpg';
-import djdancing from '../../../Images/DjDancing.jpg'
-import moment from "moment";
+import { Button, Card, TextField } from "@mui/material";
+import { useEffect, useState } from "react";
+
 
 const EventManager = () =>{
+
+    // const [cardImage, setCardImage] = useState('');
+    const [eventProgram, setEventProgram] = useState<any>('');
+    const [cardColor, setCardColor] = useState<any>('');
+    const [eventDate, setEventDate] = useState<any>('');
+    const [eventStart, setEventStart] = useState<any>('');
+    const [eventEnd, setEventEnd] = useState<any>('');
+    const [eventStatus, setEventStatus] = useState<any>('');
+
+    const [components, setComponents] = useState<JSX.Element[]>([]);
+
+    const addComponent = () => {
+      const newComponent = <CardComponent eventProgram={eventProgram} eventDate={eventDate} 
+                            eventStart={eventStart} eventEnd={eventEnd} eventStatus={eventStatus} 
+                            cardColor={cardColor} />;
+                            
+      setComponents(prevComponents => [...prevComponents, newComponent]);
+    
+    };
+
+
     
     return(
-        <div style={{backgroundImage: 'url('+ require("../../../Images/bgImageEvent2.jpg")+')',backgroundSize:'cover',backgroundPosition:'center' ,height:'100%',backgroundRepeat:'no-repeat',marginTop:'-50px'}}>
-            <div className={styless['div-card_alignment1']}>
-                <CardComponent eventProgram={'Singing'} cardColor={'green'} cardImage={singing} eventDate={'02/02/2024'}/>
-                {/* <p className={styless['circle1']}></p> */}
-                <div className={styless["container"]}></div>
-                {/* <p className={styless['circle2']}></p> */}
-                <CardComponent eventProgram={'Dancing'} cardColor={'green'} cardImage={dancing} eventDate={'03/02/2024'}/>
-                {/* <p className={styless['circle3']}></p> */}
-                <div className={styless["container"]}></div>
-                {/* <p className={styless['circle4']}></p> */}
-                <CardComponent eventProgram={'Stand-Up Comdedy'} cardColor={'yellow'} cardImage={standup} eventDate={'04/02/2024'}/>
-            </div>
-
-            <div  className={styless['div-verticalLine-outer']}>
-                <div className={styless['div-verticalLine-inner']}></div>
-            </div>
-
-            <div className={styless['div-card_alignment2']}>
-                
-                <CardComponent eventProgram={'Award Ceremony'} cardColor={'red'} cardImage={award} eventDate={'06/02/2024'}/>
-                {/* <p className={styless['circle1']}></p> */}
-                <div className={styless["container"]}></div>
-                {/* <p className={styless['circle2']}></p> */}
-                <CardComponent eventProgram={'Fashion Show'} cardColor={'red'} cardImage={fashionshow} eventDate={'07/02/2024'}/>
-                {/* <p className={styless['circle3']}></p> */}
-                <div className={styless["container"]}></div>
-                {/* <p className={styless['circle4']}></p> */}
-                <CardComponent eventProgram={'Hidden Talent'} cardColor={'red'} cardImage={hiddentalent} eventDate={'08/02/2024'}/>
-            </div>
-
-            <div  className={styless['div-verticalLine-outer2']}>
-                <div className={styless['div-verticalLine-inner2']}></div>
-            </div>
-             <div className={styless['div-card_alignment3']}>
-                <CardComponent eventProgram={'DJ Dance'} cardColor={'red'} cardImage={djdancing} eventDate={'08/02/2024'}/>
-            </div>
+       <>
+            <Card sx={{height:"550px", width:"400px", display:"flex", flexDirection:"column", justifyContent:"space-around", padding:"20px"}}>
+                <h2>Add New Event</h2>
+                <TextField id="outlined-basic" label="Event Type" variant="outlined" placeholder="For ex: dancing/singing" onChange={(e)=> setEventProgram(e.target.value)}/>
+                <TextField id="outlined-basic" type="date" label="Event Date" variant="outlined" InputLabelProps={{shrink: true}} onChange={(e)=> setEventDate(e.target.value)} />
+                <TextField id="outlined-basic" label="Event Start" variant="outlined" placeholder="For ex: 04:00 PM"  onChange={(e)=> setEventStart(e.target.value)} />
+                <TextField id="outlined-basic" label="Event End" variant="outlined" placeholder="For ex: 04:00 PM"  onChange={(e)=> setEventEnd(e.target.value)}/>
+                <Button variant="contained" color="primary" onClick={() => addComponent()}>Add</Button>
+            </Card>
+        
+        <div style={{display:"flex"}}>
+            {components.map((component)=> component)}
         </div>
+        
+       </>
     )
 }
 

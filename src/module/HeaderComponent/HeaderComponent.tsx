@@ -7,9 +7,7 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { userContext } from '../../component/feature/MainComponent/MainComponent';
@@ -22,7 +20,6 @@ function HeaderComponent({tabs} : {tabs:string[]}) {
   const {userLoginDetail, setUserLoginDetail} = React.useContext(userContext);
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -113,11 +110,7 @@ function HeaderComponent({tabs} : {tabs:string[]}) {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {tabs.map((tab) => (
-              <Button
-                key={tab}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
+              <Button key={tab} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
                 {tab}
               </Button>
             ))}
@@ -125,7 +118,7 @@ function HeaderComponent({tabs} : {tabs:string[]}) {
 
           <Box sx={{ flexGrow: 0 }}>
             
-              <Button variant='contained' color='success' onClick={()=> {setUserLoginDetail({}); contextData.setOpenAlert(true);}}>Logout</Button>
+              <Button variant='contained' color='error' onClick={()=> {setUserLoginDetail({}); contextData.setOpenAlert(true);}}>Logout</Button>
             
           </Box>
         </Toolbar>

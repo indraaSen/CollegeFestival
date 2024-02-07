@@ -18,7 +18,6 @@ const SignIn = ({setIsSignUp} : {setIsSignUp:  React.Dispatch<React.SetStateActi
         if(loginChecked && loginChecked.code === 200){
             contextData.setUserLoginDetail(loginChecked.UserData);
             contextData.setOpenAlert(true);
-            // alert("user logged in");
         }else{
             alert("user not found");
             contextData.setUserLoginDetail({});    
