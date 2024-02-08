@@ -29,8 +29,8 @@ export const  allUserData:any = [
     },
     {
         fullName:"Anvish kumar",
-        email:"anvish@gmail.com",
-        password: "anvish@gmail.com",
+        email:"anvish@admingmail.com",
+        password: "anvish@admingmail.com",
         userType: 'Admin'
     }
 ];

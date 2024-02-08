@@ -3,7 +3,7 @@ import College from "../College/College";
 import Auth from "../../Auth/Auth";
 import Student from "../Student/Student";
 import Admin from "../Admin/Admin";
-import AlertComp from "../../../module/Alert/AlertComp";
+import AlertComp from "../../../module/AlertComponent/AlertComp";
 import ReactDOM from "react-dom";
 
 export const userContext = React.createContext<any>({})

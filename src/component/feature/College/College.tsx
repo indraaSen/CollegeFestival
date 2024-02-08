@@ -1,5 +1,5 @@
 import HeaderComponent from "../../../module/HeaderComponent/HeaderComponent"
-import EventManager from "../Student/EventManager/EventManager";
+import EventManager from "../EventManager/EventManager";
 
 const College = () =>{
 
@@ -8,6 +8,7 @@ const College = () =>{
     return(
         <div>
             <HeaderComponent tabs={tabs}/>
+            <h1>this is for college professors</h1>
             <EventManager />
         </div>
     )

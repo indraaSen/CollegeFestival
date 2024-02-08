@@ -1,5 +1,5 @@
 import HeaderComponent from "../../../module/HeaderComponent/HeaderComponent";
-import EventManager from "../Student/EventManager/EventManager";
+import EventManager from "../EventManager/EventManager";
 
 const Admin = () => {
     const tabs:string[] = ["Home", "Manage Events", "Notice"];
